@@ -60,7 +60,7 @@ public class AuthorServiceImpl implements AuthorService {
 
 	@Override
 	public void deleteAuthor(long id) {
-		//Delete books before deleting author
+		//Update books before deleting author
 		
 		ResponseEntity<String> result = restTemplate.exchange(BOOK_SERVICE_URL + "/" + id, HttpMethod.PUT, null, String.class);
 		LOGGER.info("Response Status: " + result.getStatusCode());
